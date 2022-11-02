@@ -466,7 +466,7 @@ elif  guess.isalpha() == False and len(guess) == 1:
 else:
     print("Oops! That is not a valid input.")
 ```
-At the end of milestaone 2 I am now conversant with writing codes and opening terminals in VScode. I have also practiced coding in python where have learnt: 
+At the end of milestaone 2 I have consolidated my knowledge of milestone subjects and I  am now conversant with writing codes and opening terminals in VScode. I have also practiced coding in python where have learnt about the following 
 - function
 - import
 - __init__
