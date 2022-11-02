@@ -265,6 +265,7 @@ elif x > 0:
     print('x is greater than 0')
 else:
     print('x is less than 0')
+```
 ```python
 #Order of Conditions
 #Download the next file .
@@ -284,7 +285,7 @@ elif x > 0:
 else:
     print('x is less than 0')
 ```
-
+```pyton
 a = 'Altitude'
 b = 'airspeed' 
 a = 9000
@@ -465,7 +466,7 @@ elif  guess.isalpha() == False and len(guess) == 1:
 else:
     print("Oops! That is not a valid input.")
 ```
-At the end of milestaone 2 I am now conversant with writing codes and opening terminals in VScode. I have also practiced codeing in python where have learnt about 
+At the end of milestaone 2 I am now conversant with writing codes and opening terminals in VScode. I have also practiced coding in python where have learnt: 
 - function
 - import
 - __init__
