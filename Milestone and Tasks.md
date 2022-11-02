@@ -1,13 +1,16 @@
 # Milestone 1
 - To setup a development environment
 ## Task 1 : setup Github
-> I successfully setup my development environment and Github account after going through the study content listed below. I am now aware 
-> of the sercurity key needed to activate activate and link on Github account via bash.
-> I now know a some important commands I can execute on a VS code git bash terminal to achieve certain opertions e.g 
-> ```[ls] [mkdir] [cd ..] [touch] [rm] [rw-r] [echo] [git init] [git status] [git add] [git rm] [git commit]
-> [git branch] [git checkout -b] [git checkout] [git merge] [git clone] [vim tutor] [ls-ls] [ls-l] [ls-a]
-> [conda activate base] [print $PATH] [which ls] [print env] [which python] [echo python $PATH] [python --version].```
-> I am now conversant with basic features and capabilities of VS code.
+I successfully setup my development environment and Github account after going through the study content listed below. I am now aware 
+of the sercurity key needed to activate activate and link on Github account via bash.
+I now know a some important commands I can execute on a VS code git bash terminal to achieve certain opertions e.g
+ 
+```python
+[ls] [mkdir] [cd ..] [touch] [rm] [rw-r] [echo] [git init] [git status] [git add] [git rm] [git commit]
+[git branch] [git checkout -b] [git checkout] [git merge] [git clone] [vim tutor] [ls-ls] [ls-l] [ls-a]
+[conda activate base] [print $PATH] [which ls] [print env] [which python] [echo python $PATH] [python --version]
+```
+I am now conversant with basic features and capabilities of VS code.
 ### Prerequisite study content
 - What is the command line
 - Running terminal commands
