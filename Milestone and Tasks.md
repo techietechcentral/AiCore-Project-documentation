@@ -548,10 +548,9 @@ def check_guess():
         print(f'Sorry, {guess} is not in {word}. Try again.')
 check_guess()
 ```
-
 ### Milestone 3 Task 3
 
-```pythob
+```python
 '''Rev 3.5 - this function Checks whether the letter guessed by the user is in the secret word that was 
 randomly chosen by the computer (Milestone 3 task 2). 
 Capital Letters have now been introduced as valid inputs in this version'''
