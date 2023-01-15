@@ -18,7 +18,7 @@ I am now conversant with basic features and capabilities of VS code.
 - The Essentials of Git 
 - What is Github?
 
-# Milestone 2
+# Milestone 2 Task 1
 - To get comfortable with basic python commands
 ## Task 1 : Define the list of possible words
 ### Code
@@ -423,7 +423,7 @@ print(ds)
 ```
 In connection to milestaone one I have engaged in spending time practicing basic python syntax using VSCode to execute various basic codes involving python operators,
 numbers, strings, boolean, creating new files, creating folders incuding the interactive python note book (ipynb) file and the print function. I have learnt quite abit about Lists and and idexing and I found it really intresting.
-# Milestone 2
+# Milestone 2 Task 2
 - To get comfortable with basic python commands
 ## Task 2 : Define the list of possible words
 To accomplish this task, you will need to use the 'random' module. The random module is one of Python's built-in modules. It has a choice method which returns a random item from a given sequence.
@@ -478,3 +478,96 @@ At the end of milestaone 2 I have consolidated my knowledge of milestone subject
 - List
 - set
 - if, elif, and else statement 
+
+### Milestone 3 Task 1
+- Check if the guessed character is in the word
+- In this milestone I will check if the guessed letter is in the radomly chosen word.
+Write code that will continuously ask the user for a letter and validate it.
+Create a new script called milestone_3.py. This file will contain the code for this milestone.
+Step 1. Create a while loop and set the condition to True. Setting the condition to True ensures that the code run continuously.
+In the body of the loop, write the code required for the following steps.
+Step 2: Ask the user to guess a letter and assign this to a variable called guess.
+Step 3. Check that the guess is a single, alphabetical character.
+Step 4. If the guess passes the checks, break out of the loop.
+Step 5: If the guess does not pass the checks, then print a message saying "Invalid letter. Please, enter a single alphabetical character."
+```python
+
+'''
+while True:
+    guess = input('Please, enter a single alphabetical character :')
+    if guess.isalpha() == True and len(guess) == 1 and guess != int:
+        break
+    else:
+        print("Invalid letter. Please, enter a single alphabetical character.")
+   ```
+    
+### Milestone 3 Task 2
+
+```python
+
+'''Rev 3.2 - Check whether the letter guessed by the user is in the secret word that was 
+randomly chosen by the computer (capital excluded)'''
+mylist = ["blue", "car", 'horse', 'titanium', 'composite']
+import random
+random.choice(mylist)
+word = random.choice(mylist)
+print(f'{word} is the radom word in question')
+
+guess = input('Please, enter a single alphabetical character: ')
+while guess == guess in word:
+    if len(guess) == 0:
+        guess = input('Please, enter a single alphabetical character: ')
+    elif (len(guess) == 1) and guess.isalpha() == True:
+        print(f'Good guess! {guess} is in {word}.')
+        break    
+else:
+    print(f'Sorry, {guess} is not in {word}. Try again.')
+    ```
+
+```python
+'''Rev 3.4 - this function Checks whether the letter guessed by the user is in the secret word that was 
+randomly chosen by the computer (Milestone 3 task 2). 
+Capital Letters have now been introduced as valid inputs in this version'''
+
+mylist = ["blue", "car", 'horse', 'titanium', 'composite']
+
+def check_guess(): 
+    import random
+    random.choice(mylist)
+    word = random.choice(mylist)
+    print(f'{word} is the radom word in question')
+
+    guess = (input('Please, enter a single alphabetical character: ')).lower()
+    while guess == guess in word:
+        if len(guess) == 0:
+            guess = input('Please, enter a single alphabetical character: ').lower()
+        elif (len(guess) == 1) and guess.isalpha() == True:
+            print(f'Good guess! {guess} is in {word}.')
+            break    # this controls the loop depending on indent
+    else:
+        print(f'Sorry, {guess} is not in {word}. Try again.')
+check_guess()
+```
+
+### Milestone 3 Task 3
+
+```pythob
+
+'''Rev 3.5 - this function Checks whether the letter guessed by the user is in the secret word that was 
+randomly chosen by the computer (Milestone 3 task 2). 
+Capital Letters have now been introduced as valid inputs in this version'''
+
+
+mylist = ["blue", "car", 'horse', 'titanium', 'composite']
+
+def ask_for_input():
+    while True:
+        guess = (input('Please, enter a single alphabetical character :')).lower()
+        if guess.isalpha() == True and len(guess) == 1 and guess != int:
+            print("correct! valid input")   
+            break
+        else:
+            print("Invalid letter. Please, enter a single alphabetical character.")
+check_guess()
+ask_for_input()
+```
