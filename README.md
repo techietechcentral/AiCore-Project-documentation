@@ -5,7 +5,8 @@ Although I am have an Engineering background; I am totally new to python and apa
 I hope you enjoy going through my work.
 Thank you.
 
-## Add a section to your README file that explains how you defined the functions you created.
+### Mliestone 3 Task 4
+#### Add a section to your README file that explains how you defined the functions you created.
 I definined the Functions by ensuring that I observe header . A function header consists of four components:
 1. The def keyword
 2. The name of the function, following proper naming conventions
