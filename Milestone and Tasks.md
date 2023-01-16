@@ -502,6 +502,11 @@ while True:
    ```
     
 ### Milestone 3 Task 2
+- Iteratively check if the input is a valid guess
+Check whether the letter guessed by the user is in the secret word that was randomly chosen by the computer. For example, if the user guesses the letter "a" and the secret word is "apple", then your code should check if "a" is in "apple".
+Step 1. Create an if statement that checks if the guess is in the word.
+Step 2. In the body of the if statement, print a message saying "Good guess! {guess} is in the word.". Obviously, format the string to show the actual guess instead of {guess}.
+Step 3. Create an else block that prints a message saying "Sorry, {guess} is not in the word. Try again." This block of code will run if the guess is not in the word.
 
 ```python
 
@@ -549,6 +554,19 @@ def check_guess():
 check_guess()
 ```
 ### Milestone 3 Task 3
+- check whether the guess is in the word.
+
+Good job so far! But your code probably doesn't look great. It's hard to tell which lines do what.
+Create 2 functions, check_guess and ask_for_input functions which contain the code for those two things.
+The check_guess function will take the guessed letter as an argument and check if the letter is in the word.
+Step 1: Define a function called check_guess. pass in the guess as a parameter for the function. Write the code for the following steps in the body of this function.
+Step 2: Convert the guess into lower case.
+Step 3. Move the code that you wrote to check if the guess is in the word into this function block.
+The ask_for_input function.
+Step 1. Define a function called ask_for_input.
+Step 2. Move the code that you wrote in the Iteratively check if the input is a valid guess task into this function block.
+Step 3. Outside the while loop, but within this function, call the check_guess function to check if the guess is in the word. Don't forget to pass in the guess as an argument to the method.
+Step 4. Outside the function, call the ask_for_input function to test your code.
 
 ```python
 '''Rev 3.5 - this function Checks whether the letter guessed by the user is in the secret word that was 
