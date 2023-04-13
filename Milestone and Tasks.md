@@ -586,3 +586,190 @@ def ask_for_input():
 check_guess()
 ask_for_input()
 ```
+#### ***Milestone 4***
+```python
+mylist = ["blue", "car", 'horse', 'titanium', 'composite']
+
+def check_guess(): 
+    import random
+    random.choice(mylist)
+    word = random.choice(mylist)
+    print(f'{word} is the radom word in question')
+
+    guess = (input('Please, enter a single alphabetical character: ')).lower()
+    while guess == guess in word:
+        if len(guess) == 0:
+            guess = input('Please, enter a single alphabetical character: ').lower()
+        elif (len(guess) == 1) and guess.isalpha() == True:
+            print(f'Good guess! {guess} is in {word}.')
+            break    # this controls the loop depending on indent
+    else:
+        print(f'Sorry, {guess} is not in {word}. Try again.')
+check_guess()
+```
+> - Create a new script called milestone_4.py. This file will contain the code for the third milestone.
+Define the init method of the Hangman class.
+- Step 1. Create a class called Hangman.
+- Step 2. Inside the class, create an init method to initialise the attributes of the class. Pass in word_list and num_lives as parameters. Make num_lives a default parameter and set the value to 5.
+- Step 3. Initialise the following attributes:
+1. word: The word to be guessed, picked randomly from the word_list. ***Remember to import the random module into your script.***
+2. word_guessed: list - A list of the letters of the word, with for each letter not yet guessed. For example, if the word is 'apple', the word_guessed list would be ['', '', '', '', '']. If the player guesses 'a', the list would be ['a', '', '', '', ''].
+3. num_letters: int - The number of UNIQUE letters in the word that have not been guessed yet.
+4. num_lives: int - The number of lives the player has at the start of the game.
+5. word_list: list - A list of words.
+6. list_of_guesses: list - A list of the guesses that have already been tried. Set this to an empty list initially.
+```python
+# import the random module
+import random
+# Step 1. Create a class called Hangman.
+class Hangman:
+    #Inside the class, create an init method to initialise the attributes of the class. 
+    # Pass in word_list and num_lives as parameters. 
+    # Make num_lives a default parameter and set the value to 5.
+    def __init__(self, word_list, num_lives=5):
+        # Initialise the following attributes:
+        self.word_list = word_list  
+        self.num_lives = num_lives  # num_lives: int - The number of lives the player has at the start of the game.
+        self.word = random.choice(word_list)    # word: The word to be guessed
+        self.word_guessed = ['' for _ in range(len(self.word))]     # word_guessed: list - A list of the letters of the word, with for each letter not yet guessed
+        self.num_letters = len(set(self.word))  # num_letters: int - The number of UNIQUE letters in the word that have not been guessed yet
+        self.list_of_guesses = []   # list_of_guesses: list - A list of the guesses that have already been tried. Set this to an empty list initially.
+```
+```python
+'''
+In the code below, we import the random module and define the Hangman class. 
+The __init__ method initializes the attributes of the class. 
+It takes in word_list and num_lives as parameters. 
+num_lives is a default parameter and its value is set to 5.
+
+We initialize the word_list and num_lives attributes with the values passed in as parameters. 
+Then, we randomly select a word from the word_list using the random.choice() method 
+and store it in the word attribute.
+
+We also initialize the word_guessed attribute to a list of empty strings with a length equal
+to the length of the word. This list will keep track of the letters in the word that have 
+not yet been guessed. We initialize num_letters to the number of unique letters in the word.
+
+Finally, we initialize the list_of_guesses attribute to an empty list. This list will keep 
+track of the letters that have already been guessed.
+'''
+
+import random
+
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['' for _ in range(len(self.word))]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+```
+```python
+class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in range(len(self.word))]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            for i in range(len(self.word)):
+                if self.word[i] == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+        else:
+            self.num_lives -= 1
+        print(f"Sorry, {guess} is not in the word.")
+        print(f"You have {self.num_lives} lives left.")
+
+    def ask_for_input(self):
+        while True:
+            guess = input("Guess a letter: ")
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+```
+
+```python
+import random
+
+class Hangman:
+    """
+    A class representing a game of Hangman.
+
+    Attributes:
+    - word_list (list): A list of words to choose from for the game.
+    - num_lives (int): The number of lives the player has to guess the word.
+    - word (str): The word chosen for the game.
+    - word_guessed (list): A list of underscores representing the letters of the word to guess.
+    - num_letters (int): The number of unique letters in the word to guess.
+    - list_of_guesses (list): A list of letters guessed by the player.
+
+    Methods:
+    - __init__(self, word_list, num_lives=5): Initializes the Hangman game with the given word list and number of lives.
+    - check_guess(self, guess): Checks if the guessed letter is in the word, updates the word_guessed list if necessary,
+      and decrements the number of lives if the guess is incorrect.
+    - ask_for_input(self): Prompts the player to enter a letter guess and handles invalid input.
+    """
+
+    def __init__(self, word_list, num_lives=5):
+        """
+        Initializes the Hangman game with the given word list and number of lives.
+
+        Args:
+        - word_list (list): A list of words to choose from for the game.
+        - num_lives (int): The number of lives the player has to guess the word.
+        """
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = random.choice(word_list)
+        self.word_guessed = ['_' for _ in range(len(self.word))]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    def check_guess(self, guess):
+        """
+        Checks if the guessed letter is in the word, updates the word_guessed list if necessary,
+        and decrements the number of lives if the guess is incorrect.
+
+        Args:
+        - guess (str): The letter guessed by the player.
+        """
+        guess = guess.lower()
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
+            for i in range(len(self.word)):
+                if self.word[i] == guess:
+                    self.word_guessed[i] = guess
+            self.num_letters -= 1
+        else:
+            self.num_lives -= 1
+        print(f"Sorry, {guess} is not in the word.")
+        print(f"You have {self.num_lives} lives left.")
+
+    def ask_for_input(self):
+        """
+        Prompts the player to enter a letter guess and handles invalid input.
+        """
+        while True:
+            guess = input("Guess a letter: ")
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+```          
