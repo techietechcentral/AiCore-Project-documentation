@@ -32,3 +32,34 @@ The Hangman class was defined with the init method that took two parameters, wor
 The check_guess method takes a guess parameter, converts it to lowercase, and checks if the guess is in the word. If the guess is in the word, it prints a message saying "Good guess! {guess} is in the word." It then updates the word_guessed list to reveal the position of the correctly guessed letter(s) and decrements the num_letters counter. If the guess is not in the word, it decrements the num_lives counter and prints a message saying "Sorry, {guess} is not in the word. You have {self.num_lives} lives left."
 2.	ask_for_input: 
 The ask_for_input method uses a while loop to keep asking the user to guess a letter until a valid guess is made. It first prompts the user to enter a guess, checks if the guess is a single alphabetical character, and if it has already been guessed. If the guess is not valid, it prints an error message. If the guess is valid, it calls the check_guess method and adds the guess to the list_of_guesses. If the guess is correct, the loop continues until the word is guessed or the player runs out of lives.
+
+### Milestone 5
+
+This is a Python code for the Hangman game, which is a word guessing game. The player tries to guess the letters of a secret word, and has a limited number of chances to do so. The game starts with a word randomly selected from a given list of words.
+
+The code begins by importing the random module.
+
+The Hangman class is defined next, which represents the Hangman game. The class has five attributes:
+
+word_list (list): A list of words to choose from.
+num_lives (int): The number of lives the player has.
+word (str): The word to be guessed, chosen randomly from the word_list.
+word_guessed (list): A list representing the word to be guessed, with '_' for letters not yet guessed.
+list_of_guesses (list): A list of letters that have already been guessed.
+The __init__ method initializes the attributes of the Hangman object. It takes two parameters:
+
+word_list (list): A list of words to choose from.
+num_lives (int): The number of lives the player has. It defaults to 5 if not specified.
+The check_guess method checks if the guessed letter is in the word and updates the attributes. It takes one parameter:
+
+guess (str): The letter guessed by the player.
+The ask_for_input method asks the player to guess a letter and handles invalid input. It returns the guessed letter.
+
+The play_game method plays the Hangman game using the given word list. It takes one parameter:
+
+word_list (list): A list of words to choose from.
+The play_game method creates an instance of the Hangman class and enters a while loop that continues until the game is over (either the player wins or loses). Within the while loop, the method calls ask_for_input to get the player's guess and updates the game state accordingly. If the player wins or loses, the loop is broken and a message is printed to the console.
+
+Finally, the code creates a word list and calls the play_game method to play the Hangman game using the given word list.
+
+Overall, the code follows a clear and modular design, with separate methods for initializing the game, checking guesses, asking for input, and playing the game. The use of a class to represent the Hangman game allows for easy management of the game state and logic. The code also includes error handling to prevent the player from entering invalid input.
